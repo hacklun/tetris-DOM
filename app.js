@@ -5,6 +5,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const height = 20;
     let currentPosition = 4;
 
+    function control(e) {
+        if (e.KeyCode === 39) {
+            moveRight();
+        } else if (e.KeyCode === 38) {
+            rotate();
+        } else if (e.KeyCode === 37) {
+            moveLeft();
+        } else if (e.KeyCode === 40) {
+            moveDown();
+        }
+    }
+
+    document.addEventListener('keyup', control);
+
     const lTetromino = [
         [1, width + 1, width * 2 + 1, 2],
         [width, width + 1, width + 2, width * 2 + 2],
